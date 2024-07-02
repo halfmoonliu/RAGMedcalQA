@@ -1,1 +1,1 @@
-# Retrieval Augmented Generation Faciliatated Medical Question Answering
+# RAG Faciliatated Medical Question Answering
