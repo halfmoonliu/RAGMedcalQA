@@ -42,4 +42,9 @@ The PQA-A subset was **randomly split into training and validation dataset using
 <img width="700" alt="Table 1" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/5b17aab9-c579-4e47-b32c-403f230dbd27">
 <img width="700" alt="Table 2" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/e0dccfb0-5e7d-4405-8297-065d5eb21011">
 
+## References
+
+1.	Jin, Qiao, et al. "Pubmedqa: A dataset for biomedical research question answering." *arXiv preprint* arXiv:1909.06146 (2019). </br>
+2.	Devlin, Jacob, et al. "Bert: Pre-training of deep bidirectional transformers for language understanding." *arXiv preprint* arXiv:1810.04805 (2018). </br>
+3.	Radford, Alec, et al. "Language models are unsupervised multitask learners." *OpenAI blog* 1.8 (2019): 9.  </br>
 
