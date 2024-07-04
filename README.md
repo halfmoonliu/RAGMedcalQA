@@ -4,6 +4,12 @@
 
 **This project aims to investigate the effectiveness of applying retrieval-augmented generation (RAG) on medical question answering**. **MedQuAD**, a **medical question answer dataset** containing more than **200 thousand question-answer pairs**, was used for the study. **With correctly paired question-document as input**, the **test accuracy and F-1 score achieved 74.49 and 81.41**, higher than accuracy and achieved using questions alone (63.71 and 77.01 respectively).  The **ROUGE-L and BLEU scores** using the correct question-document pair as input **were 12.66 and 13.72**, higher than using questions with retrieved documents and questions only as input. **The results show the potential of RAG to improve the performance of machine medical question answering**. Further research is needed to increase accuracy for clinical use.
 
+## Files
+
+1. Model training:
+2. Yes-No Answer Generation
+3. Long Answer Generation
+
 ## Background
 
 Medical question answering can benefit caregivers by reducing workload and providing actionable insights. **The challenge of medical question answering is to generate accurate responses** using natural human languages. Recent advances in large language models (LLMs) have dramatically enhanced machine capacity to generate natural language. **With new findings being published on a regular basis**, the problem becomes even more challenging. **A document stating the newest findings might be proved wrong or irrelevant very soon**. LLMs are trained on a large amount of documents to generate the most likely (or probable) response. However, **the most probable answers to medical questions might be just wrong** and lead to fatal consequences. **The aim of this project is to explore the possibility of leveraging RAG to increase the performance of medical question answering**
@@ -30,3 +36,11 @@ The PQA-A subset was **randomly split into training and validation dataset using
 ### Long Answer Generation
 
 **For the long answer generation task, the GPT-2 [3] model was used to generate answers to questions using different inputs (question only, question plus the retrieved most relevant paper abstract, question plus the actual paper abstract)**. The **ROUGE** (Recall-Oriented Understudy for Gisting Evaluation)-L and **one-gram BLEU** (BiLingual Evaluation Understudy) **score were used to assess the quality of the generated response**. All the reported results were assessed using the held-out human annotated dataset (PQA-L).
+
+## Results
+
+<img width="698" alt="Table 1" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/25a8c250-14c0-49c4-abda-7d9f788b88bd">
+<img width="691" alt="Table 2" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/0a067800-115b-48bc-b1b7-f9c103f59a42">
+
+
+
