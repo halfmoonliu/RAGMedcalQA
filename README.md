@@ -6,9 +6,9 @@
 
 ## Code 
 
-a. Model training: 1_ModelTraining_MedicalQA.ipynb
-b. Yes-No Answer Generation: 2_YesNo_MedicalQuestions.ipynb
-c. Long Answer Generation: 3_LongAnswer_MedicalQuestions.ipynb
+a. Model training: 1_ModelTraining_MedicalQA.ipynb </br>
+b. Yes-No Answer Generation: 2_YesNo_MedicalQuestions.ipynb </br>
+c. Long Answer Generation: 3_LongAnswer_MedicalQuestions.ipynb </br>
 
 ## Background
 
