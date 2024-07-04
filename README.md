@@ -39,8 +39,7 @@ The PQA-A subset was **randomly split into training and validation dataset using
 
 ## Results
 
-<img width="698" alt="Table 1" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/25a8c250-14c0-49c4-abda-7d9f788b88bd">
-<img width="691" alt="Table 2" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/0a067800-115b-48bc-b1b7-f9c103f59a42">
-
+<img width="700" alt="Table 1" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/5b17aab9-c579-4e47-b32c-403f230dbd27">
+<img width="700" alt="Table 2" src="https://github.com/halfmoonliu/RAGMedcalQA/assets/46064664/e0dccfb0-5e7d-4405-8297-065d5eb21011">
 
 
