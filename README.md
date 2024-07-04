@@ -10,3 +10,23 @@ Medical question answering can benefit caregivers by reducing workload and provi
 
  ## Dataset
 **The dataset used for this study is PubMedQA** , a question-answering dataset **containing three subsets, PQA-L, PQA-U, and PQA-A, with 1, 61.2, and 211.3 thousand question-answer pairs respectively** [1]. The **questions and answers were obtained from PubMed**, one of the most popular biomedical research paper databases. For papers with a yes-no question as the title, the titles were selected directly as questions in PQA-L and PQA-U. In the **PQA-L (labeled) subset**, **human experts manually annotated the yes-no answer** (yes: 55.2%, no: 33.8%, maybe: 11.0%). In the PQA-U (unlabeled) subset, yes-no answers were not provided. For the other papers, the titles, which are statements, were ***converted into questions***, which formed the questions in the **PQA-A (artificial) subset**. For example, the title of the paper ”Spontaneous electrocardiogram alterations predict ventricular fibrillation in Brugada syndrome.” was transformed as “Do spontaneous electrocardiogram alterations predict ventricular fibrillation in Brugada syndrome?” and the yes-no answers were produced automatically (yes: 92.8 %, no: 7.2).
+
+
+## Preprocessing
+
+### Preprocessing
+
+The PQA-A subset was **randomly split into training and validation dataset using a 9:1 ratio** for the yes-no answer prediction task. The PQA-L, the human annotated dataset, was used as the test dataset for both yes-no questions and long-answer generation. All textual data were tokenized using the pretrained BERT model [2] using Hugging Face’s transformers library (version 4.40.1).
+
+### Document Retrieval
+
+**All abstracts in the PQA-L subset were treated as candidate documents**. All the questions and candidate documents were represented using the [cls] token of the pretrained BERT model . **The question-document pair with the highest cosine similarity score was retrieved**.
+
+
+### Yes-No Answer Generation
+
+**The yes-no answer generation task was treated as a binary outcome prediction task.** Input text was represented with the BERT model’s [cls] token. The pretrained BERT model was applied, with a linear model on top of the attention layer. The final output passed through a tanh activation for the binary classification task. The model was fine-tuned on the PQA-A dataset after preprocessing with 3 epochs (learning rate: *1e-5*, .batch size: 8. The PQA-L dataset was used to test the performance of the model, using **three kinds of input (question only, question plus the retrieved most relevant paper abstract, question plus the actual paper abstract)**. Questions with “maybe”, instead of yes/no, as answers were excluded during the test phase. Overall accuracy and F1 score were used to assess the performance.
+
+### Long Answer Generation
+
+**For the long answer generation task, the GPT-2 [3] model was used to generate answers to questions using different inputs (question only, question plus the retrieved most relevant paper abstract, question plus the actual paper abstract)**. The **ROUGE** (Recall-Oriented Understudy for Gisting Evaluation)-L and **one-gram BLEU** (BiLingual Evaluation Understudy) **score were used to assess the quality of the generated response**. All the reported results were assessed using the held-out human annotated dataset (PQA-L).
